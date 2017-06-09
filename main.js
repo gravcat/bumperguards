@@ -37,4 +37,4 @@ function check(readBal) {
     }
 }
 
-var intervalCheck = setInterval(check, 1000, readBal);
+var intervalCheck = setInterval(check, 1000);
