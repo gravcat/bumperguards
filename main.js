@@ -16,7 +16,7 @@ if (beginBal != readBal) {
 }
 
 // potential to lose monies, let's be really explicit and check prompted vs read to make sure on the call to begin as well
-if (beginBal = readBal && readBal > thresholdBal) {
+if (readBal > thresholdBal) {
     document.getElementById('btn-bet-start-pilot-dice').click(); // if balance checks out, click the "start"
 }
 
