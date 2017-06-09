@@ -3,7 +3,7 @@ var readBal = document.getElementById("balances-lg").innerText // will register 
 readBal = readBal.replace(/\s/g, ""); // data massaging to remove newlines
 
 // below this, we'll stop the bets
-var thresholdBal = .110
+var thresholdBal = (readBal - .01)
 
 // Wrapping to interface with the user and get/check parameters
 console.log("Have the game STOPPED and on AUTOMATED mode. To stop the output/loop, execute window.clearInterval(intervalCheck) or close the tab")
@@ -31,9 +31,9 @@ function check() {
         console.log("Balance: " + readBal, "Threshold: " + thresholdBal);
         var nowBal = readBal
     }
-    if (readBal > (thresholdBal + .05)) {
-        console.log("Balance: " + readBal, "Threshold: " + thresholdBal + "- Adjusting"
-        thresholdBal = thresholdBal + .03
+    if (readBal > (thresholdBal + .02)) {
+        console.log("Balance: " + readBal, "Threshold: " + thresholdBal + "- Adjusting")
+        thresholdBal = (readBal - .01)
     }
     if (readBal < thresholdBal) {
         document.getElementById('btn-bet-stop-pilot-dice').click();
