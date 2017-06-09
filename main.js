@@ -24,12 +24,16 @@ if (readBal > thresholdBal) {
 console.log("Starting balance: " + readBal);
 
 // outputs current balance
-function check(readBal) {
-	var readBal = document.getElementById("balances-lg").innerText
+function check() {
+    var readBal = document.getElementById("balances-lg").innerText
     
     if (readBal > thresholdBal) {
         console.log("Balance: " + readBal, "Threshold: " + thresholdBal);
         var nowBal = readBal
+    }
+    if (readBal > (thresholdBal + .05)) {
+        console.log("Balance: " + readBal, "Threshold: " + thresholdBal + "- Adjusting"
+        thresholdBal = thresholdBal + .03
     }
     if (readBal < thresholdBal) {
         document.getElementById('btn-bet-stop-pilot-dice').click();
